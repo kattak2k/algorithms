@@ -17,11 +17,11 @@
 #     The elements of the list states contains 0s and 1st only.
 
 def aactive(arr, days)
-  new = []
+  new_arr = []
   ln = arr.count - 1
   days.times do
     arr.each_with_index do |x, i|
-      new[i] = case i
+      new_arr[i] = case i
                when 0
                  arr[i + 1] == 0 ? 0 : 1
                when ln
@@ -30,7 +30,7 @@ def aactive(arr, days)
                  arr[i - 1] == arr[i + 1] ? 0 : 1
                end
     end
-    arr = new.dup
+    arr = new_arr.dup
   end
   arr
 end
