@@ -7,7 +7,8 @@ def missing(ad)
   sum_of_ad = 0
   n = ad.count
   total = (n + 1) * (n + 2) / 2
-  sum_of_ad = ad.inject(0){|sum,x| sum + x }
+  #sum_of_ad = ad.inject(0){|sum,x| sum + x }
+  sum_of_ad = ad.sum
   total - sum_of_ad
 end
 
