@@ -1,5 +1,5 @@
 #
-#   String matching algorithm
+#  Naive String matching algorithm
 # T = "ABCABABCDD"
 # P = "BAB"
 #
