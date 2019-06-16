@@ -6,14 +6,21 @@ def fib_even_sum(maxval)
   totl = []
   fib_arr = []
   (1..maxval).each do |x|
+
     fib_arr << case x
                when 1..2 # skip 1 & 2
                  x
                else  # sum the previous and last previous value of array
-                 (fib_arr[x - 2] + fib_arr[x - 3])
+                 last_val = (fib_arr[x - 2] + fib_arr[x - 3])
                end
+
+     break if (last_val  || 0) >= maxval
+
   end
-s
+
+  #remove the last element of it is greater than the max val
+  fib_arr.pop() if fib_arr[-1] >= maxval
+
   # pick all even numbers
   totl = fib_arr.select(&:even?)
 
@@ -23,8 +30,5 @@ end
 
 # find total sum of 4 million even nos
 p fib_even_sum(10)
-
 #p fib_even_sum(4_000_000)
-
-
 # still need to improve performance
