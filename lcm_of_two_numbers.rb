@@ -16,4 +16,3 @@ end
 #p lcm(15, 20)
 p lcm(98, 56)
 
-# This code is contributed by Danish Raza
