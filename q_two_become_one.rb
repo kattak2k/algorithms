@@ -28,7 +28,7 @@ class Stack
   
       def add(n)
         # add to front   
-        @first.push(n)
+        @first.unshift(n)
         p "1st st Push: #{@first}"
       end
   
@@ -37,7 +37,7 @@ class Stack
         return "queue is empty" if @first.empty?
       # remove at end  
         @first.length.times do 
-          @second.push(@first.pop())
+          @second.unshift(@first.pop())
         end
 
         p "2 stack: #{@second}"
@@ -46,7 +46,7 @@ class Stack
         
         # put every thing back in first stack
         @second.length.times do
-          @first.push(@second.pop())
+          @first.unshift(@second.pop())
         end
         p "2nd Push: #{@first}"
         
