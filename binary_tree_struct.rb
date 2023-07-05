@@ -87,24 +87,20 @@ end
 p level_order(root, []) # => ["A", "C", "B", "E", "G", "F", "D"]
 
 #=================== breadth_first_search =================#
+def bfs(root,nodes)
+  if root.nil?
+    return
+  end
 
-def bfs(root, nodes)
-  queue = [root]
-   loop do 
-    
-   end
- 
+  queue = []
+  queue.push(root)
+  while queue.any?
+    node = queue.shift
+    nodes << node.data
+    queue.push(node.left) if node&.left
+    queue.push(node.right) if node&.right
+  end
   nodes
 end
 
-p bfs(root,[])
-# levelorder(root)
-#   q ← empty queue
-#   q.enqueue(root)
-#   while (not q.isEmpty())
-#     node ← q.dequeue()
-#     visit(node)
-#     if (node.left ≠ null)
-#       q.enqueue(node.left)
-#     if (node.right ≠ null)
-#       q.enqueue(node.right)
+p bfs(root,[])  #=> ["A", "B", "C", "D", "E", "F", "G"]
